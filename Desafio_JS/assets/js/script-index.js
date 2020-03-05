@@ -115,8 +115,58 @@ function tabuadaDoWhile(){
 }
 
 // Função soma
-function somaValores(){
+document.getElementById('numero2').addEventListener('blur', function(){
     n1 = parseInt(document.getElementById("numero1").value);
     n2 = parseInt(document.getElementById("numero2").value);
     document.getElementById("resultado-soma").innerHTML = n1+n2;
+})
+
+// Funções operações matemáticas
+document.getElementById('adiciona').addEventListener('click', function(){
+    var primeiro=parseInt(document.getElementById("num").value);
+    var segundo=[0,1,2,3,4,5,6,7,8,9,10];
+    document.getElementById('resultado').innerHTML='';
+    for(var i=0; i<segundo.length; i++){
+        document.getElementById('resultado').innerHTML+=`${primeiro} + ${segundo[i]} = ${primeiro+segundo[i]}<br>`;
+    }
+})
+document.getElementById('subtrai').addEventListener('click', function(){
+    var primeiro=parseInt(document.getElementById("num").value);
+    var segundo=[0,1,2,3,4,5,6,7,8,9,10];
+    document.getElementById('resultado').innerHTML='';
+    for(var i=0; i<segundo.length; i++){
+        document.getElementById('resultado').innerHTML+=`${primeiro} - ${segundo[i]} = ${primeiro-segundo[i]}<br>`;
+    }
+})
+document.getElementById('multiplica').addEventListener('click', function(){
+    var primeiro=parseInt(document.getElementById("num").value);
+    var segundo=[0,1,2,3,4,5,6,7,8,9,10];
+    document.getElementById('resultado').innerHTML='';
+    for(var i=0; i<segundo.length; i++){
+        document.getElementById('resultado').innerHTML+=`${primeiro} x ${segundo[i]} = ${primeiro*segundo[i]}<br>`;
+    }
+})
+document.getElementById('divide').addEventListener('click', function(){
+    var primeiro=parseInt(document.getElementById("num").value);
+    var segundo=[0,1,2,3,4,5,6,7,8,9,10];
+    document.getElementById('resultado').innerHTML='';
+    for(var i=0; i<segundo.length; i++){
+        if(segundo[i]==0){
+            document.getElementById('resultado').innerHTML+=`${primeiro} / ${segundo[i]} = Impossível dividir por 0<br>`;
+        }else{
+            document.getElementById('resultado').innerHTML+=`${primeiro} / ${segundo[i]} = ${primeiro/segundo[i]}<br>`;
+        }
+    }
+})
+
+// Funções de seleção
+function pegaSelecao(){
+    var selecionado;
+    var entrada = document.getElementsByName('opcao');
+    for(var i =0; i<entrada.length; i++){
+        if(entrada[i].checked){
+            selecionado = entrada[i].value;
+        }
+    }
+    console.log(`Opção selecionada: ${selecionado}`);
 }

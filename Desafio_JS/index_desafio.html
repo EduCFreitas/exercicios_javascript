@@ -11,7 +11,7 @@
     <main class="container">
         <nav class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html" class="navbar-link">Introdução ao Javascript</a></li>
+                <li class="active"><a href="index_desafio.html" class="navbar-link">Introdução ao Javascript</a></li>
                 <li><a href="logica-simples.html" class="navbar-link">Lógica simples com JS</a></li>
                 <li><a href="logica-complexa.html" class="navbar-link">Lógica complexa com JS</a></li>
             </ul>
@@ -24,9 +24,9 @@
         <section class="container-fluid">
             <h3 id="titulo">Conhecendo o básico da linguagem</h3>
             <p>
-                <button class="btn btn-primary" onClick="alert('E aí, meu chapa!')">ALERT</button>
-                <button class="btn btn-primary" onClick="confirm('Tudo supimpa?')">CONFIRM</button>
-                <button class="btn btn-primary" onClick="prompt('Prompt aberto através do botão:')">PROMPT</button>
+                <button class="btn btn-primary" onclick="alert('E aí, meu chapa!')">ALERT</button>
+                <button class="btn btn-primary" onclick="confirm('Tudo supimpa?')">CONFIRM</button>
+                <button class="btn btn-primary" onclick="prompt('Prompt aberto através do botão:')">PROMPT</button>
             </p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, amet porro pariatur suscipit debitis, aliquid adipisci quod molestiae, harum dolore tempore hic sunt eos iste consequuntur fugit sequi sed! Optio.</p>
             <p> 
@@ -117,7 +117,7 @@
                     <input class="longo input-lg" type="number" id="numero1">
                     <br>
                     <label for="numero2">SEGUNDO NÚMERO:</label>
-                    <input class="longo input-lg" type="number" id="numero2" onblur="somaValores()">
+                    <input class="longo input-lg" type="number" id="numero2">
                 </p>
                 <p>Resultado: <span id="resultado-soma"></span></p>
                 <hr>
@@ -128,25 +128,25 @@
                     <input class="longo input-lg" type="number" id="num" min="1" max="10" step="1" placeholder="de 1 a 10">
                 </p>
                 <p>
-                    <button class="btn btn-primary" value="adic" onClick="tabelaNumeros(this.value)">ADIÇÃO</button>
-                    <button class="btn btn-primary" value="sub" onClick="tabelaNumeros(this.value)">SUBTRAÇÃO</button>
-                    <button class="btn btn-primary" value="mult" onClick="tabelaNumeros(this.value)">MULTIPLICAÇÃO</button>
-                    <button class="btn btn-primary" value="divi" onClick="tabelaNumeros(this.value)">DIVISÃO</button>
+                    <button class="btn btn-primary" value="adic" id="adiciona">ADIÇÃO</button>
+                    <button class="btn btn-primary" value="sub" id="subtrai">SUBTRAÇÃO</button>
+                    <button class="btn btn-primary" value="mult" id="multiplica">MULTIPLICAÇÃO</button>
+                    <button class="btn btn-primary" value="divi" id="divide">DIVISÃO</button>
                 </p>
                 <p id="resultado"></p>
                 <hr>
                 <p>Seleção de opção</p>
                 <p>
-                    <input type="radio" name="opcao" value="esportes" id="esportes" onChange="pegaValor()">
+                    <input type="radio" name="opcao" value="esportes" id="esportes" onchange="pegaSelecao()">
                     <label for="esportes">Esportes</label>
                     <br>
-                    <input type="radio" id="educacao" name="opcao" value="educacao" onChange="pegaValor()">
+                    <input type="radio" id="educacao" name="opcao" value="educacao" onchange="pegaSelecao()">
                     <label for="educacao">Educação</label>
                     <br>
-                    <input type="radio" id="politica" name="opcao" value="politica" onChange="pegaValor()">
+                    <input type="radio" id="politica" name="opcao" value="politica" onchange="pegaSelecao()">
                     <label for="politica">Política</label>
                     <br>
-                    <input type="radio" id="artes" name="opcao" value="artes" onChange="pegaValor()">
+                    <input type="radio" id="artes" name="opcao" value="artes" onchange="pegaSelecao()">
                     <label for="artes">Artes</label>
                 </p>
             </section>
@@ -156,6 +156,6 @@
         </footer>
         
         
-        <script src="assets/js/script.js"></script>
+        <script src="assets/js/script-index.js"></script>
     </body>
     </html>
