@@ -75,5 +75,7 @@ document.getElementById('calculaConsumo').addEventListener('click', function(){
 
 // Função correção monetária
 document.getElementById('calculaRendimento').addEventListener('click', function(){
-    
+    var deposito = Number(document.getElementById('deposito').value);
+    var rendimento = Number(document.getElementById('rendimento').value);
+    document.getElementById('corrigido').value = (`R$${(deposito+deposito*(rendimento/100)).toFixed(2)}`);
 })
