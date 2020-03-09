@@ -148,10 +148,66 @@ document.getElementById('iniciaPesquisa').addEventListener('click', function(){
 
 // Função eleições
 var votos = [];
+var qtd1 = 0;
+var qtd2 = 0;
+var qtd3 = 0;
+var qtd4 = 0;
+var qtdNulo = 0;
+var qtdBco = 0;
+var porcNulo = 0;
+var porcBco = 0;
 document.getElementById('confirmar').addEventListener('click', function(){
     votos.push(parseInt(document.querySelector("input[name='candidatos']:checked").value));
+    console.log(votos)
 })
 
 document.getElementById('finalizar').addEventListener('click', function(){
-    // *************Realizar programação de contagem de votos******************
+    for(var i=0; i<votos.length; i++){
+        if(votos[i]==1){
+            qtd1++;
+        }else if(votos[i]==2){
+            qtd2++;
+        }else if(votos[i]==3){
+            qtd3++;
+        }else if(votos[i]==4){
+            qtd4++;
+        }else if(votos[i]==5){
+            qtdNulo++;
+        }else{
+            qtdBco++;
+        }
+    }
+    console.log(qtd1, qtd2, qtd3, qtd3, qtdNulo, qtdBco)
+    porcNulo = ((qtdNulo/votos.length)*100).toFixed(2);
+    porcBco = ((qtdBco/votos.length)*100).toFixed(2);
+    document.getElementById('total').innerHTML = votos.length;
+    document.getElementById('total1').innerHTML = qtd1;
+    document.getElementById('total2').innerHTML = qtd2;
+    document.getElementById('total3').innerHTML = qtd3;
+    document.getElementById('total4').innerHTML = qtd4;
+    document.getElementById('totalNulo').innerHTML = qtdNulo;
+    document.getElementById('porcNulo').innerHTML = porcNulo;
+    document.getElementById('totalBranco').innerHTML = qtdBco;
+    document.getElementById('porcBranco').innerHTML = porcBco;
+})
+
+document.getElementById('limpaVotos').addEventListener('click', function(){
+    votos = [];
+    qtd1 = 0;
+    qtd2 = 0;
+    qtd3 = 0;
+    qtd4 = 0;
+    qtdNulo = 0;
+    qtdBco = 0;
+    porcNulo = 0;
+    porcBco = 0;
+    document.getElementById('total').innerHTML = 0;
+    document.getElementById('total1').innerHTML = 0;
+    document.getElementById('total2').innerHTML = 0;
+    document.getElementById('total3').innerHTML = 0;
+    document.getElementById('total4').innerHTML = 0;
+    document.getElementById('totalNulo').innerHTML = 0;
+    document.getElementById('porcNulo').innerHTML = 0;
+    document.getElementById('totalBranco').innerHTML = 0;
+    document.getElementById('porcBranco').innerHTML = 0;
 })
